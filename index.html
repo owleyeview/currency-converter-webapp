@@ -1,0 +1,121 @@
+<!-- 
+Rashaan Lightpool
+Project 2: Currency Converter WebApp
+SD 230 - Professor Stuart, WCC
+11/15/2023
+
+This is a currency converter web app that allows the user to convert between
+currencies and look up currencies.
+I would like to add drop down menus for the currency codes to make it easier
+for the user to input the correct currency code.
+-->
+
+<!-- to do:
+        change the labels to lowercase with dash separation 
+    
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="/converter/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>XC Clone</h1>
+      <nav>
+        <ul>
+          <li>Send Money</li>
+          <li>Converter</li>
+          <li>Currency API</li>
+          <li>Tools</li>
+        </ul>
+      </nav>
+      <div class="sign-in">
+        <a>Sign In</a>
+        <button>Register</button>
+      </div>
+    </header>
+    <div id="hero">
+      <h1>Currency Converter</h1>
+    </div>
+    <main>
+      <section class="currency-converter">
+        <!-- Currency conversion section -->
+        <div id="conversion-form">
+          <div id="input-row">
+            <div class="input">
+              <label for="amount">Amount</label>
+              <input
+                type="text"
+                id="amount"
+                placeholder="Enter amount to convert"
+              />
+            </div>
+            <div class="input">
+              <label for="baseCurrency">From</label>
+              <select id="base-currency" name="base-currency">
+                <option value="USD" selected>USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CLP">CLP</option>
+                <option value="CNY">CNY</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+                <option value="RUB">RUB</option>
+                <option value="ZAR">ZAR</option>
+              </select>
+            </div>
+            <!-- <button id="swap-button">Swap</button> -->
+            <div class="input">
+              <label for="targetCurrency">To</label>
+              <select id="target-currency" name="target-currency">
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD" selected>CAD</option>
+                <option value="CLP">CLP</option>
+                <option value="CNY">CNY</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+                <option value="RUB">RUB</option>
+                <option value="ZAR">ZAR</option>
+              </select>
+            </div>
+          </div>  
+          <button
+            id="convert-button"
+            onclick="convertCurrency(document.getElementById('amount').value.substring(1) , document.getElementById('base-currency').value , document.getElementById('target-currency').value)"
+          >
+            Convert
+          </button>
+          <section class="result" id="conversion-results"></section>
+        </div>
+      </section>
+    </main>
+    <!-- Currency lookup section -->
+    <!-- <h2>Lookup Currency</h2>
+    <label>
+      Query:
+      <input type="text" id="currencyQuery" placeholder="eg. Dollar" />
+    </label>
+    <br /><br />
+    <button
+      onclick="lookupCurrency(document.getElementById('currencyQuery').value)"
+    >
+      Lookup
+    </button>
+    <div class="result" id="lookup-result"></div> -->
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
