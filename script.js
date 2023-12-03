@@ -64,6 +64,11 @@ function convertCurrency(amount, fromCurrency, toCurrency) {
     // Convert the amount string to a number
     amount = parseFloat(amount);
 
+    // Handle the case where amount is not a number
+    if (isNaN(amount)) {
+        return;  // Exit the function early
+    }
+
     // Convert the amount to USD first
     let amountInUSD = fromCurrency === 'USD' ? amount : amount / exchangeRates.rates[fromCurrency];
 

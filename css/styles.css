@@ -90,10 +90,21 @@ main {
     padding: 20px;
 }
 
-#conversion-form {
+.currency-converter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    justify-items: center;
+}
+
+#conversion-form, .conversion-chart {
     padding: 2rem;
     border-radius: .5rem;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+#conversion-form {
+    grid-column: 1 / 3;
     display: grid;
     gap: .5rem;
     justify-items: center;
