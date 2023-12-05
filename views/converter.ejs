@@ -1,0 +1,72 @@
+<%- include('./partials/layout', {
+    title: 'Currency Converter',
+    body: `
+    <section class="container">
+        <!-- Currency conversion section -->
+        <div id="conversion-form">
+          <div id="input-row">
+            <div class="input">
+              <label for="amount">Amount</label>
+              <input
+                type="text"
+                id="amount"
+                placeholder="Enter amount to convert"
+              />
+            </div>
+            <div class="input">
+              <label for="base-currency">From</label>
+              <select id="base-currency" name="base-currency">
+                <option value="USD" selected>USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CLP">CLP</option>
+                <option value="CNY">CNY</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+                <option value="RUB">RUB</option>
+                <option value="ZAR">ZAR</option>
+              </select>
+            </div>
+            <!-- <button id="swap-button">Swap</button> -->
+            <div class="input">
+              <label for="target-currency">To</label>
+              <select id="target-currency" name="target-currency">
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD" selected>CAD</option>
+                <option value="CLP">CLP</option>
+                <option value="CNY">CNY</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+                <option value="RUB">RUB</option>
+                <option value="ZAR">ZAR</option>
+              </select>
+            </div>
+          </div>  
+          <button
+            id="convert-button"
+            onclick="convertCurrency(document.getElementById('amount').value.substring(1) , document.getElementById('base-currency').value , document.getElementById('target-currency').value)"
+          >
+            Convert
+          </button>
+          <section class="result" id="conversion-results"></section>
+        </div>
+        <div class="results-table" id="from-table">
+          <p>From/To</p>
+          <p>1/5</p>
+          <p>5/10</p>
+          <p>10/20</p>
+        </div>
+        <div class="results-table" id="to-table">
+          <p>To/From</p>
+          <p>1/0.2</p>
+          <p>5/1</p>
+          <p>10/2</p>
+        </div>
+      </section>
+    `
+  }) %>
