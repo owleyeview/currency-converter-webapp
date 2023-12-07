@@ -98,6 +98,7 @@ main {
 }
 
 #conversion-form, .results-table {
+    display: none;
     padding: 2rem;
     border-radius: .5rem;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
